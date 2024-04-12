@@ -1,0 +1,171 @@
+@use "../../colors" as colors;
+
+.footer {
+    padding: 50px 0;
+    background-color: colors.$primary-color;
+
+    &__container {
+        width: 90%;
+        margin: 0 auto;
+        max-width: 1200px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 40px;
+        justify-items: center;
+    }
+
+    &__item {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
+        height: max-content;
+        width: 100%;
+
+        &-title {
+            font-size: 16px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            font-weight: 500;
+            color: colors.$dark-color;
+        }
+
+        &-link, &-text {
+            height: max-content;
+            color: #fff;
+            font-size: 14px;
+            font-style: normal;
+        }
+
+        &-link::first-letter,
+        &-text::first-letter {
+            text-transform: uppercase;
+        }
+
+        &-link {
+            transition: color 0.2s ease;
+            width: max-content;
+
+            &:hover {
+                color: colors.$dark-color;
+            }
+        }
+
+        &__social {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            grid-gap: 5px;
+
+            &-span {
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                width: 27px;
+                height: 27px;
+                border-radius: 50%;
+                font-size: 16px;
+                cursor: pointer;
+                color: #fff;
+                transition: transform 0.09s linear;
+
+                &:hover {
+                    transform: translateY(-5px);
+                }
+
+                &.facebook {
+                    background-color: colors.$facebook;
+                }
+
+                &.youtube {
+                    background-color: colors.$youtube;
+                }
+
+                &.twitter {
+                    background-color: colors.$twitter;
+                }
+
+                &.pinterest {
+                    background-color: colors.$pinterest;
+                }
+
+                &.instagram {
+                    background: colors.$instagram-no-gradient;
+                    background: colors.$instagram-gradient;
+                }
+            }
+        }
+
+        &-newsletter {
+            display: inline-block;
+            width: max-content;
+            color: #fff;
+            background-color: colors.$dark-color;
+            font-family: inherit;
+            padding: 8px 25px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-weight: 600;
+
+            &:hover {
+                color: colors.$primary-color;
+                background-color: #fff;
+            }
+        }
+
+        &--copy {
+            grid-row: 2/3;
+            grid-column: 1/-1;
+            text-align: center;
+        }
+
+        &-copy {
+            font-size: 17px;
+            color: colors.$dark-color;
+            word-spacing: 3px; 
+
+            a {
+                color: colors.$dark-color;
+                font-weight: 500;
+                transition: color 0.2s ease;
+
+                &:hover {
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 830px) {
+    .footer__container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .footer__item.footer__item--copy {
+        grid-row: 3/4;
+    }
+}
+
+@media screen and (max-width: 630px) {
+    .footer__container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer__item.footer__item--copy {
+        grid-row: 4/5;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .footer__container {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer__item.footer__item--copy {
+        grid-row: 5/6;
+    }
+}

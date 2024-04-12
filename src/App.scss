@@ -1,0 +1,45 @@
+@use "./colors" as colors;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    color: #000;
+    background-color: colors.$background-color;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+button, input {
+    border: none;
+    outline: none;
+    background: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 35px;
+    text-transform: capitalize;
+    font-weight: 500;
+    margin-bottom: 20px;
+
+    @media screen and (max-width: 768px) {
+        font-size: 30px;
+    }
+
+    @media screen and (max-width: 550px) {
+        font-size: 25px;
+    }
+}

@@ -1,0 +1,39 @@
+@use "../../colors" as colors;
+
+.filterOptions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 20px;
+    margin: 40px 0;
+
+    @media screen and (max-width: 550px) {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    &-opt {
+        width: max-content;
+        display: inline-block;
+        font-size: 15px;
+        font-weight: 500;
+        color: colors.$gray;
+        background-color: #fff;
+        padding: 5px 20px;
+        border-radius: 15px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.01);
+        text-transform: capitalize;
+        cursor: pointer;
+        font-weight: 400;
+        transition: all 0.2s ease;
+
+        &.active, &:hover {
+            background-color: colors.$primary-color;
+            color: #fff;
+        }
+
+        @media screen and (max-width: 550px) {
+            justify-self: center;
+        }
+    }
+}

@@ -1,0 +1,22 @@
+.blog__section {
+    padding: 40px 10px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.blog__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+
+    @media screen and (max-width: 900px) {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    @media screen and (max-width: 600px) {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+    }
+}

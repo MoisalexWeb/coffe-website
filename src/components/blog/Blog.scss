@@ -1,0 +1,106 @@
+@use "../../colors" as colors;
+
+
+.blog {
+    width: 100%;
+    position: relative;
+    text-align: left;
+    overflow: hidden;
+    background-color: #fff;
+    border-radius: 20px;
+    padding-bottom: 20px;
+
+    &-img {
+        width: 100%;
+        height: 260px;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 20px;
+    }
+
+    &__texts {
+        padding: 0 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        grid-gap: 10px;
+        margin-top: 15px;
+
+        &-title {
+            font-size: 18px;
+            font-weight: 400;
+            transition: color 0.2s ease;
+            cursor: pointer;
+    
+            &:hover {
+                color: colors.$primary-color;
+            }
+        }
+    
+        &-date {
+            color: colors.$primary-color;
+            font-size: 13px;
+        }
+    
+        &-description {
+            font-size: 14px;
+            color: colors.$gray;
+        }
+    
+        &-cta {
+            width: max-content;
+            display: inline-block;
+            background-color: colors.$primary-color;
+            text-transform: uppercase;
+            color: #fff;
+            border-radius: 20px;
+            padding: 8px 30px;
+            font-size: 13px;
+            transition: background-color 0.2s ease;
+    
+            &:hover {
+                background-color: #000;
+            }
+        }
+    }
+
+
+    &__search {
+        display: flex;
+        grid-gap: 10px;
+        width: max-content;
+        position: absolute;
+        right: -90px;
+        top: 210px;
+        transition: right 0.2s ease;
+
+        &-btn {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background-color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+
+            i {
+                transition: color 0.2s ease;
+            }
+
+            &:hover {
+                background-color: colors.$primary-color;
+
+                & > i {
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    &:hover > &__search {
+        right: 10px;
+    }
+}
